@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var querystring = require('querystring');
 
 var yo = require('../scripts/yo.js')
 
@@ -22,15 +23,18 @@ router.get('/index', function(req, res){
 });
 
 router.get('/yo', function(req,res){
-	res.render('message', {category:req.query.category, location:req.query.location, message:req.query.message})
+	res.render('message', {category:querystring.destringify(req.query.category), 
+		location:querystring.destringify(req.query.location), 
+		message:querystring.destringify(req.query.message)})
 });
 
 router.post('/sendyo', function(req, res){
 	var category = req.body.category;
 	var location = req.body.location;
 	var message = req.body.message;
-
-	yo.yoAll("http://yomergency.herokuapp.com/yo?category=" + category + "&location=" + location + "&message=" + message, function(response){
+	var query = querystring.stringify({category: category, 
+		location: location, message: message})
+	yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
 		res.send("Yo sent successfully.")
 	})
 })
