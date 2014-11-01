@@ -49,7 +49,6 @@ router.post('/sendyo', function(req, res){
             }).save(function(err,newYo){
                 if(err) throw err;
                 console.log("Saved: " + newYo);
-                done(null, newYo);
             });
 
 	var query = querystring.stringify({category: category, 
