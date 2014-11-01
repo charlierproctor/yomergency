@@ -14,9 +14,9 @@
 	margin: 0 auto;
 	padding: 2em 0;
 	max-width: 860px;
-	width: 100%;
+	width: 80%;
 	text-align: left;
-	font-size: 2.5em;
+	font-size: 14pt;
 }
 
 .simform .submit {
@@ -40,7 +40,7 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 2.35em;
+	height: 30px;
 }
 
 .questions li {
@@ -99,10 +99,10 @@
 
 /* Input field */
 .questions input {
-	display: block;
+	display: inline;
 	margin: 0.1em 0 0 0;
 	padding: 0.2em 1em 0.2em 0.7em;
-	width: calc(50% - 2em);
+	width: 100%;
 	border: none;
 	background: transparent;
 	color: rgba(0,0,0,0.8);
