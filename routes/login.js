@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var monk=require('monk');
+var mongoose=require('mongoose');
 
 var db = require('../scripts/db.js');
+
+var FbUsers = require('../scripts/fbUsers.js');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy;
@@ -14,36 +16,20 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://yomergency.herokuapp.com/login/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    var collection = db.get('users');   // our users collection
-
-    // attempt to find this token in our database
-    collection.findOne({
-            'facebook.id': profile.id 
-        }, function(err, user) {
-            if (err) {
-                return done(err);
-            }
-            //No user was found... so create a new user with values from Facebook (all the profile. stuff)
-            if (!user) {
-                user = new User({
-                    name: profile.displayName,
-                    email: profile.emails[0].value,
-                    username: profile.username,
-                    accessToken: accessToken,
-                    provider: 'facebook',
-                    //now in the future searching on User.findOne({'facebook.id': profile.id } will match because of this next line
-                    facebook: profile._json
-                });
-                user.save(function(err) {
-                    if (err) console.log(err);
-                    console.log("saving user...");
-                    return done(err, user);
-                });
-            } else {
-                //found user. Return
-                return done(err, user);
-            }
-        });
+      FbUsers.findOne({fbId : profile.id}, function(err, oldUser){
+        if(oldUser){
+            done(null,oldUser);
+        }else{
+            var newUser = new FbUsers({
+                fbId : profile.id ,
+                email : profile.emails[0].value,
+                name : profile.displayName
+            }).save(function(err,newUser){
+                if(err) throw err;
+                done(null, newUser);
+            });
+        }
+      });
   }
 ));
 
