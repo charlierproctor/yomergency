@@ -18,7 +18,7 @@
     <link href="css/component.css" rel="stylesheet" type="text/css" />
     <script src="js/modernizr.custom.js"></script>
     <style>
-    <% if(category === "WARNING") { %>
+    <% if(category.toLowerCase() === "warning") { %>
            body {background-color:#F1C40F}
     <% } %>
     </style>
@@ -28,7 +28,7 @@
     <div class = "container">
 
 <div class = "message">
-<img src="images/<%= category %>.png">
+<img src="images/<%= category.toLowerCase() %>.png">
     <p id ="category"><%= category %></p>
         <p id ="locat_mess"><%= location %></p>
     <p id ="locat_mess"><%= message %></p>
