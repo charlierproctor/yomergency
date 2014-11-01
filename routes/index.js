@@ -13,7 +13,7 @@ var passport = require("../scripts/passport.js");
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	if(req.isAuthenticated){
+	if(req.isAuthenticated()){
 		res.redirect('/index');
 	} else{
 		res.redirect('/login');		
@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/index', function(req, res){
-	if(req.isAuthenticated){
+	if(req.isAuthenticated()){
 		res.render('index', { user:req.user })
 	} else{
 		res.redirect('/login');		
