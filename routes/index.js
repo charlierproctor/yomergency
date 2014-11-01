@@ -22,7 +22,9 @@ router.get('/', function(req, res) {
 
 router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
-		res.render('index', { user:req.user })
+		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
+			res.render('index', { user:req.user, yos:yos })		        
+	    });
 	} else{
 		res.redirect('/login');		
 	}
