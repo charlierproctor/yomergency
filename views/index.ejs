@@ -59,7 +59,8 @@
     <div class = "alert_box">
 
       <p class = "indent">
-        <% for(var yo in yos) { %>
+        <% for(var i = 0; i < yos.length; i++) { %>
+        <% var yo = yos[i] %>
           <t><span class="<%= yo.category %>">•  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT 00:00:00: <%= yo.message %><br>
         <% } %> 
       </p>
