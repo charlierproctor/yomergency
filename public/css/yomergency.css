@@ -107,7 +107,18 @@ hr {
 
 
 
+.img_responsive {
+    display: block;
+    height: auto;
+    max-width: 75%;
+}
 
+img {
+    vertical-align: middle;
+    border: 0;
+    page-break-inside: avoid;
+    max-width: 75%;
+}
 
 
 
@@ -126,14 +137,14 @@ hr {
 }
 
 #yo_small {
-    font-size: 30pt;
+    font-size: 22pt;
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 
 #mergency_small {
-    font-size: 24pt;
+    font-size: 20pt;
     color: #d8ade9;
     font-family:'Montserrat-Bold';
     text-rendering: optimizeLegibility;
@@ -141,13 +152,13 @@ hr {
 
 #category {
     padding-top: 20px;
-    font-size: 45pt;
+    font-size: 35pt;
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 #locat_mess {
-    font-size: 30pt;
+    font-size: 23pt;
     font-family:'Montserrat-Regular';
     color: #d8ade9;
     text-rendering: optimizeLegibility;
@@ -155,9 +166,5 @@ hr {
 
 #send_form {
     padding-left: 20px;
-}
-
-#send {
-
 }
 
