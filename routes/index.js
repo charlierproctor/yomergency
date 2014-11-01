@@ -5,12 +5,25 @@ var passport = require('passport');
 var yo = require('../scripts/yo.js')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-	res.redirect('/login');
+router.get('/', function(req, res) {
+	if(req.user){
+		res.redirect('/index');
+	} else{
+		res.redirect('/login');		
+	}
 });
 
-router.get('/index',
-  passport.authenticate('facebook', { successRedirect: '/bob',
-                                   failureRedirect: '/steve' }));
+router.get('/index', ensureAuthenticated, function(req, res){
+	if(req.user){
+		res.render('index', { user:req.user })
+	} else{
+		res.redirect('/login');		
+	}
+});
+
+var ensureAuthenticated = function(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}
 
 module.exports = router;
