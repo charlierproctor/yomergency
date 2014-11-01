@@ -5,9 +5,15 @@ var querystring = require('querystring');
 
 var yo = require('../scripts/yo.js')
 
+var mongoose=require('mongoose');
+var db = require('../scripts/db.js');
+var Yos = require('../scripts/yos.js');
+
+var passport = require("../scripts/passport.js");
+
 /* GET home page. */
 router.get('/', function(req, res) {
-	if(req.isAuthenticated){
+	if(req.isAuthenticated()){
 		res.redirect('/index');
 	} else{
 		res.redirect('/login');		
@@ -15,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/index', function(req, res){
-	if(req.isAuthenticated){
+	if(req.isAuthenticated()){
 		res.render('index', { user:req.user })
 	} else{
 		res.redirect('/login');		
@@ -33,6 +39,19 @@ router.post('/sendyo', function(req, res){
 	var category = req.body.category;
 	var location = req.body.location;
 	var message = req.body.message;
+
+	var authorsFbId = "asdf";
+	console.log("user: " + req.user);
+	// var newYo = new Yos({
+ //                authorsFbId : authorsFbId,
+ //                message : message,
+ //                category : category,
+ //                location : location
+ //            }).save(function(err,newYo){
+ //                if(err) throw err;
+ //                done(null, newYo);
+ //            });
+
 	var query = querystring.stringify({category: category, 
 		location: location, message: message})
 	yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
