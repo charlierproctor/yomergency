@@ -41,20 +41,60 @@ p {
 
 
 hr {
-  border: 0;
+  border: 3px;
   width: 100%;
-  color: #be98cd;
+  color: #d8ade9;
     background-color: #be98cd;
-    height: 2px;
+    height: 3px;
 }
 
 .title {
-  margin: 35px 0 30px;
+  margin: 35px 0 0px;
+  padding-bottom: 15px;
 }
 
-.send {
+.indent {
     padding-left: 20px;
 }
+
+.alert_box {
+    padding-top: 12px;
+    padding-top: 12px;
+    background-color: #a360bf;
+    opacity: 1;
+}
+
+
+
+.prowler {
+    color: #34495E;
+}
+
+.fire {
+    color: #e74c3c;
+}
+
+.flood {
+    color: #3498DB;
+}
+
+.blizzard {
+    color: #2980B9;
+}
+
+.earthquake {
+    color: #16A085;
+}
+
+.warning {
+    color: #F1C40F;
+}
+
+
+
+
+
+
 
 #yo {
     font-size: 60pt;
@@ -71,3 +111,8 @@ hr {
 #send_form {
     padding-left: 20px;
 }
+
+#send {
+
+}
+

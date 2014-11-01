@@ -8,6 +8,10 @@
     <meta name="author" content="">
 
     <title>YOMERGENCY</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link href='css/style.css' rel='stylesheet'/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='css/yomergency.css' rel='stylesheet'/>
@@ -23,22 +27,51 @@
      <div class="title">
       <h1><span id="yo">Yo</span>
         <span id="mergency">MERGENCY</span></h1>
-    </div><hr>
+    </div>
+
+    <hr>
 
 
-    <div class ="send">
+    <div class ="indent">
     <h2>SEND AN ALERT</h2>
 
-        <form action="" class="validate" target="_blank" id="send_form">
-            <p><t>CATEGORY <input type="email" value="" name="send" class="validate[required,custom[email]] feedback-input" placeholder="send alert" required>
+        <form action="" class="indent" target="_blank">
+            <p><t>CATEGORY  <select>
+  <option value="">PROWLER</option>
+  <option value="">FIRE</option>
+  <option value="">FLOOD</option>
+  <option value="">BLIZZARD</option>
+  <option value="">EARTHQUAKE</option>
+  <option value="">WARNING</option>
+    </select> <br>
 
-            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
 
-            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
 
-            <input type="submit" value="SUBSCRIBE" name="subscribe" id="button-yellow" class="submit">
+            <input type="submit" value="SEND" name="subscribe" id="send">
             </p>
         </form>
+    </div>
+
+
+    <div class ="indent">
+    <h2>RECENT ALERTS</h2>
+      
+    <div class = "alert_box">
+
+      <p class = "indent">
+        <t><span class="prowler">•  </span>PROWLER IN PLACE AT 00:00:00: MESSAGE<br>
+        <t><span class="fire">•  </span>FIRE IN PLACE AT 00:00:00: MESSAGE<br>
+        <t><span class="flood">•  </span>FLOOD IN PLACE AT 00:00:00: MESSAGE<br>
+        <t><span class="blizzard">•  </span>BLIZZARD IN PLACE AT 00:00:00: MESSAGE<br>
+        <t><span class="earthquake">•  </span>EARTHQUAKE IN PLACE AT 00:00:00: MESSAGE<br>
+        <t><span class="warning">•  </span>WARNING IN PLACE AT 00:00:00: MESSAGE<br>
+      </p>
+
+    </div>
+
+
     </div>
 
 
@@ -87,16 +120,9 @@
 
       new stepsForm( theForm, {
         onSubmit : function( form ) {
-          // hide form
+
           classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
 
-          /*
-          form.submit()
-          or
-          AJAX request (maybe show loading indicator while we don't have an answer..)
-          */
-
-          // let's just simulate something...
           var messageEl = theForm.querySelector( '.final-message' );
           messageEl.innerHTML = 'Sent!';
           classie.addClass( messageEl, 'show' );
