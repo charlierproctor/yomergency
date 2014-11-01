@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>YOMERGENCY</title>
+    <link href='css/style.css' rel='stylesheet'/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='css/yomergency.css' rel='stylesheet'/>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="css/component.css" rel="stylesheet" type="text/css" />
+    <script src="js/modernizr.custom.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <a href="/login/facebook">Login with Facebook</a>
+    
+    <div class = "container">
+
+     <div class="title">
+      <h1><span id="yo">Yo</span>
+        <span id="mergency">MERGENCY</span></h1>
+    </div><hr>
+
+
+    <div class ="send">
+    <h2>SEND AN ALERT</h2>
+
+        <form action="" class="validate" target="_blank" id="send_form">
+            <p><t>CATEGORY <input type="email" value="" name="send" class="validate[required,custom[email]] feedback-input" placeholder="send alert" required>
+
+            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+
+            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+
+            <input type="submit" value="SUBSCRIBE" name="subscribe" id="button-yellow" class="submit">
+            </p>
+        </form>
+    </div>
+  </div>
+
+<script src="js/classie.js"></script>
+    <script src="js/stepsForm.js"></script>
+    <script>
+      var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Sent!';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+    </script>
   </body>
 </html>

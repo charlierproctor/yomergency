@@ -43,6 +43,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+router.get('/', function(req,res){
+  res.render('login');
+});
+
 router.get('/db', function(req,res){
   FbUsers.find({}, function(err, users){
     res.send(users);

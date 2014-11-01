@@ -1,18 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 var yo = require('../scripts/yo.js')
 
 /* GET home page. */
-router.get('/', function(req, res) {
-	yo.yoAll("http://www.google.com/", function(err,res,body){
-		console.log(err)
-		console.log(body)
-	});
-	// yo.yoAll("", function(err,res,body){
-	// 	console.log(body)
-	// })
-  	res.render('index', { title: 'Express' });
+router.get('/', passport.authenticate('facebook', { successRedirect: '/index',
+                                      failureRedirect: '/login' }));
+router.get('/index', function(req, res, next) {
+  passport.authenticate('facebook', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.redirect('/login'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.render('/index')
+    });
+  })(req, res, next);
 });
 
 module.exports = router;
