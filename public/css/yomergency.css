@@ -6,12 +6,12 @@ body {
 
 @font-face {
     font-family:'Montserrat-Bold';
-    src: url(fonts/Montserrat-Bold.woff);
+    src: url(../fonts/Montserrat-Bold.woff);
 }
 
 @font-face {
     font-family:'Montserrat-Regular';
-    src: url(fonts/Montserrat-Regular.woff);
+    src: url(../fonts/Montserrat-Regular.woff);
 }
 
 h1 {
