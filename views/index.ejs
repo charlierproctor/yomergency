@@ -43,9 +43,9 @@
   <option value="warning">WARNING</option>
     </select> <br>
 
-            <t>LOCATION <input type="text" value="" name="location" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>LOCATION <input type="text" value="" name="location" class="validate[required,custom[email]] feedback-input"> <br>
 
-            <t>MESSAGE <input type="text" value="" name="message" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>MESSAGE <input type="text" value="" name="message" class="validate[required,custom[email]] feedback-input"> <br>
 
             <input type="submit" value="SEND" name="subscribe" id="send">
             </p>
@@ -59,12 +59,10 @@
     <div class = "alert_box">
 
       <p class = "indent">
-        <t><span class="prowler">•  </span>PROWLER IN PLACE AT 00:00:00: MESSAGE<br>
-        <t><span class="fire">•  </span>FIRE IN PLACE AT 00:00:00: MESSAGE<br>
-        <t><span class="flood">•  </span>FLOOD IN PLACE AT 00:00:00: MESSAGE<br>
-        <t><span class="blizzard">•  </span>BLIZZARD IN PLACE AT 00:00:00: MESSAGE<br>
-        <t><span class="earthquake">•  </span>EARTHQUAKE IN PLACE AT 00:00:00: MESSAGE<br>
-        <t><span class="warning">•  </span>WARNING IN PLACE AT 00:00:00: MESSAGE<br>
+        <% for(var i = 0; i < yos.length; i++) { %>
+        <% var yo = yos[i] %>
+          <t><span class="<%= yo.category %>">•  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= yo.createdAt.toUTCString() %>: <%= yo.message %><br>
+        <% } %> 
       </p>
 
     </div>

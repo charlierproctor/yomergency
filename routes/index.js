@@ -10,6 +10,7 @@ var db = require('../scripts/db.js');
 var Yos = require('../scripts/yos.js');
 
 var passport = require("../scripts/passport.js");
+var moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -22,7 +23,10 @@ router.get('/', function(req, res) {
 
 router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
-		res.render('index', { user:req.user })
+		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
+			console.log("YOS: " + yos);
+			res.render('index', { user:req.user, yos:yos })		        
+	    });
 	} else{
 		res.redirect('/login');		
 	}
@@ -55,7 +59,7 @@ router.post('/sendyo', function(req, res){
 		location: location, message: message})
 	yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
 		res.send("Yo sent successfully.")
-	})
+	})		
 })
 
 module.exports = router;
