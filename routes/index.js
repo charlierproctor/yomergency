@@ -15,7 +15,21 @@ router.get('/', function(req, res) {
   	res.render('index', { title: 'Express' });
 });
 
-router.post('/login', passport.authenticate('local', { successRedirect: '/',
-                                                    failureRedirect: '/login' }));
+
+var passport = require('passport')
+  , FacebookStrategy = require('passport-facebook').Strategy;
+
+passport.use(new FacebookStrategy({
+    clientID: "714170931992033",
+    clientSecret: "7a71942ad9b2053d7bb3e94e3ecf85e6",
+    callbackURL: "http://www.example.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate(..., function(err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  }
+));
 
 module.exports = router;
