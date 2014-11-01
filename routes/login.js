@@ -58,10 +58,8 @@ router.get('/facebook', passport.authenticate('facebook'));
 // authentication has failed.
 router.get('/facebook/callback', function(req, res, next) {
   console.log("looking for user");
-  passport.authenticate('facebook', function(err, user, info) {
-    console.log("callback");
-    res.redirect("http://www.google.com");
-  });
+  passport.authenticate('facebook', { successRedirect: '/',
+                                      failureRedirect: '/login' }));
 });
 
 module.exports = router;
