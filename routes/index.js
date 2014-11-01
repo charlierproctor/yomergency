@@ -23,6 +23,7 @@ router.get('/', function(req, res) {
 router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
+			console.log("YOS: " + yos);
 			res.render('index', { user:req.user, yos:yos })		        
 	    });
 	} else{
