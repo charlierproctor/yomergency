@@ -12,6 +12,7 @@
     "ejs": "~0.8.5",
     "express": "~4.8.6",
     "morgan": "~1.2.3",
+    "passport": "^0.2.1",
     "request": "^2.47.0",
     "serve-favicon": "~2.0.1",
     "yo-api": "^1.0.0"
