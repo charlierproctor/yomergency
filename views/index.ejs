@@ -9,8 +9,8 @@
 
     <title>YOMERGENCY</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='css/yomergency.css' rel='stylesheet'/>
@@ -33,19 +33,19 @@
     <div class ="indent">
     <h2>SEND AN ALERT</h2>
 
-        <form action="" class="indent" target="_blank">
-            <p><t>CATEGORY  <select>
-  <option value="">PROWLER</option>
-  <option value="">FIRE</option>
-  <option value="">FLOOD</option>
-  <option value="">BLIZZARD</option>
-  <option value="">EARTHQUAKE</option>
-  <option value="">WARNING</option>
+        <form action="/sendyo" method="POST" class="indent">
+            <p><t>CATEGORY  <select name="category">
+  <option value="prowler">PROWLER</option>
+  <option value="fire">FIRE</option>
+  <option value="flood">FLOOD</option>
+  <option value="blizzard">BLIZZARD</option>
+  <option value="earthquake">EARTHQUAKE</option>
+  <option value="warning">WARNING</option>
     </select> <br>
 
-            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>LOCATION <input type="text" value="" name="location" class="validate[required,custom[email]] feedback-input" required> <br>
 
-            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>MESSAGE <input type="text" value="" name="message" class="validate[required,custom[email]] feedback-input" required> <br>
 
             <input type="submit" value="SEND" name="subscribe" id="send">
             </p>
@@ -68,47 +68,7 @@
       </p>
 
     </div>
-
-
     </div>
-
-
-
-
-
-<!-- <section>
-<form id="theForm" class="simform" autocomplete="off">
-          <div class="simform-inner">
-            <ol class="questions">
-                <li>
-                <span><label for="q1">CATEGORY</label></span>
-                <input id="q1" name="q1" type="text"/>
-              </li>
-              <li>
-                <span><label for="q2">LOCATION</label></span>
-                <input id="q2" name="q2" type="text"/>
-              </li>
-              <li>
-                <span><label for="q3">MESSAGE</label></span>
-                <input id="q3" name="q3" type="text"/>
-              </li>
-            </ol>
-            <button class="submit" type="submit">Send answers</button>
-            <div class="controls">
-              <button class="next"></button>
-              <div class="progress"></div>
-              <span class="number">
-                <span class="number-current"></span>
-                <span class="number-total"></span>
-              </span>
-              <span class="error-message"></span>
-            </div>
-          </div>
-          <span class="final-message"></span>
-        </form>
-</section> -->
-
-
   </div>
 
 <script src="js/classie.js"></script>
