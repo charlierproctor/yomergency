@@ -43,6 +43,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+router.get('/', function(req,res){
+  res.render('login');
+});
+
 router.get('/db', function(req,res){
   FbUsers.find({}, function(err, users){
     res.send(users);
@@ -58,7 +62,7 @@ router.get('/facebook', passport.authenticate('facebook'));
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-router.get('/facebook/callback', passport.authenticate('facebook', { successRedirect: '/',
+router.get('/facebook/callback', passport.authenticate('facebook', { successRedirect: '/index',
                                       failureRedirect: '/login' }));
 
 module.exports = router;
