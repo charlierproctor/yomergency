@@ -37,6 +37,16 @@ passport.use(new FacebookStrategy({
   }
 ));
 
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  FbUsers.findById(id, function (err, user) {
+    done(err, user);
+  });
+});
+
 router.get('/', function(req,res){
   res.send("/login");
 });
