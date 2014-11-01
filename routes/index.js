@@ -5,7 +5,8 @@ var yo = require('../scripts/yo.js')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	yo.yoOne("AKIM828", "http://www.google.com", function(err,res,body){
+	yo.yoAll("http://www.google.com/", function(err,res,body){
+		console.log(err)
 		console.log(body)
 	});
 	// yo.yoAll("", function(err,res,body){

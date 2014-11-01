@@ -11,9 +11,9 @@ var yoAll = function(link, callback){
 
 var yoOne = function(username,link, callback){
 	if(link){
-		yo.yo(username, callback)		
-	} else{
 		yo.yo_link(username, link, callback)
+	} else{
+		yo.yo(username, callback)		
 	}
 }
 
