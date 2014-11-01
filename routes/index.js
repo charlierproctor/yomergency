@@ -6,7 +6,7 @@ var yo = require('../scripts/yo.js')
 
 /* GET home page. */
 router.get('/', passport.authenticate('facebook', { successRedirect: '/index',
-                                      failureRedirect: '/login' }));
+                                      failureRedirect: '/asdf' }));
 router.get('/index', function(req, res, next) {
   passport.authenticate('facebook', function(err, user, info) {
     if (err) { return next(err); }
