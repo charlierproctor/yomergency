@@ -23,9 +23,9 @@ router.get('/index', function(req, res){
 });
 
 router.get('/yo', function(req,res){
-	res.render('message', {category:querystring.parse(req.query).category, 
-		location:querystring.parse(req.query).location, 
-		message:querystring.parse(req.query).message})
+	res.render('message', {category:res.query.category, 
+		location:res.query.location, 
+		message:res.query.message})
 });
 
 router.post('/sendyo', function(req, res){
