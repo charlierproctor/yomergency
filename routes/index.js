@@ -6,7 +6,7 @@ var yo = require('../scripts/yo.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index');
+	res.render('login');
 });
 
 router.get('/index', function(req, res, next) {
