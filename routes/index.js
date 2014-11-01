@@ -9,6 +9,8 @@ var mongoose=require('mongoose');
 var db = require('../scripts/db.js');
 var Yos = require('../scripts/yos.js');
 
+var passport = require("../scripts/passport.js");
+
 /* GET home page. */
 router.get('/', function(req, res) {
 	if(req.isAuthenticated){
