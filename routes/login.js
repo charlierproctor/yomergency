@@ -10,10 +10,11 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://yomergency.herokuapp.com/login/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate(..., function(err, user) {
-      if (err) { return done(err); }
-      done(null, user);
-    });
+    // User.findOrCreate(..., function(err, user) {
+    //   if (err) { return done(err); }
+    //   done(null, user);
+    // });
+    console.log(accessToken);
   }
 ));
 
