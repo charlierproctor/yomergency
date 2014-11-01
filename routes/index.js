@@ -9,15 +9,8 @@ router.get('/', function(req, res, next) {
 	res.redirect('/login');
 });
 
-router.get('/index', function(req, res, next) {
-  passport.authenticate('facebook', function(err, user, info) {
-    if (err) { return next(err); }
-    if (!user) { return res.redirect('/login'); }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      return res.redirect('/users/' + user.username);
-    });
-  })(req, res, next);
-});
+router.get('/index',
+  passport.authenticate('local', { successRedirect: '/bob',
+                                   failureRedirect: '/steve' }));
 
 module.exports = router;
