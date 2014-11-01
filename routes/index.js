@@ -40,17 +40,17 @@ router.post('/sendyo', function(req, res){
 	var location = req.body.location;
 	var message = req.body.message;
 
-	var authorsFbId = "asdf";
 	console.log("user: " + req.user);
-	// var newYo = new Yos({
- //                authorsFbId : authorsFbId,
- //                message : message,
- //                category : category,
- //                location : location
- //            }).save(function(err,newYo){
- //                if(err) throw err;
- //                done(null, newYo);
- //            });
+	var newYo = new Yos({
+                authorsFbId : req.user.fbId,
+                message : message,
+                category : category,
+                location : location
+            }).save(function(err,newYo){
+                if(err) throw err;
+                console.log("Saved: " + newYo);
+                done(null, newYo);
+            });
 
 	var query = querystring.stringify({category: category, 
 		location: location, message: message})
