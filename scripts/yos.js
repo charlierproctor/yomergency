@@ -6,6 +6,6 @@ var YoSchema = new mongoose.Schema({
     category: String, 
     location: String
 });
-var Yos = mongoose.model('yos',FacebookUserSchema);
+var Yos = mongoose.model('yos',YoSchema);
 
 module.exports = Yos;
