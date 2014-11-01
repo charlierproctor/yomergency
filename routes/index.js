@@ -31,7 +31,7 @@ router.post('/sendyo', function(req, res){
 	var message = req.body.message;
 
 	yo.yoAll("http://yomergency.herokuapp.com/yo?message=" + message, function(response){
-		console.log(response);
+		res.send("Yo sent successfully.")
 	})
 })
 
