@@ -23,7 +23,7 @@ router.get('/index', function(req, res){
 });
 
 router.get('/yo', function(req,res){
-	var query = querystring.parse(req.originalUrl.substring(3));
+	var query = querystring.parse(req.originalUrl.substring(4));
 	res.render('message', {category:query.category, 
 		location:query.location, 
 		message:query.message})
