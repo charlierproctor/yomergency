@@ -40,8 +40,8 @@ router.get('/', function(req,res){
 router.get('/db', function(req,res){
       FbUsers.find({}, function(err, users){
           console.log(users);
-      });
       res.send(users);
+      });
 });
 
 // Redirect the user to Facebook for authentication.  When complete,
