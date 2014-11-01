@@ -41,7 +41,7 @@ router.post('/sendyo', function(req, res){
 	var message = req.body.message;
 
 	var authorsFbId = "asdf";
-	console.log(req.user);
+	console.log("user: " + req.user);
 	// var newYo = new Yos({
  //                authorsFbId : authorsFbId,
  //                message : message,
