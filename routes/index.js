@@ -57,9 +57,15 @@ router.post('/sendyo', function(req, res){
 
 	var query = querystring.stringify({category: category, 
 		location: location, message: message})
-	yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
-		res.send("Yo sent successfully.")
-	})
+	if(message){
+		yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
+			res.send("Yo sent successfully.")
+		})		
+	} else{
+		yo.yoAll("", function(response){
+			res.send("Yo sent successfully.")
+		})	
+	}
 })
 
 module.exports = router;
