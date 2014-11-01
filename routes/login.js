@@ -56,10 +56,7 @@ router.get('/facebook', passport.authenticate('facebook'));
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-router.get('/facebook/callback', function(req, res, next) {
-  console.log("looking for user");
-  passport.authenticate('facebook', { successRedirect: '/',
+router.get('/facebook/callback', passport.authenticate('facebook', { successRedirect: '/',
                                       failureRedirect: '/login' }));
-});
 
 module.exports = router;
