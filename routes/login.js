@@ -44,7 +44,6 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.get('/', function(req,res){
-  res.send("hi")
   res.render('login');
 });
 
