@@ -33,6 +33,7 @@ router.get('/facebook', passport.authenticate('facebook'));
 // authentication has failed.
 router.get('/facebook/callback', function(req, res, next) {
   passport.authenticate('facebook', function(err, user, info) {
+    console.log("callback");
     res.redirect("http://www.google.com");
   });
 });
