@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var FacebookUserSchema = new mongoose.Schema({
     fbId: String,
     email: { type : String , lowercase : true},
