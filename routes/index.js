@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index',
-  passport.authenticate('local', { successRedirect: '/bob',
+  passport.authenticate('facebook', { successRedirect: '/bob',
                                    failureRedirect: '/steve' }));
 
 module.exports = router;
