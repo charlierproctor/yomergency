@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var monk=require('monk');
+
+var db = require('../scripts/db.js');
+
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -10,11 +14,34 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://yomergency.herokuapp.com/login/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    // User.findOrCreate(..., function(err, user) {
-    //   if (err) { return done(err); }
-    //   done(null, user);
-    // });
-    console.log(accessToken);
+    var collection = db.get('users');   // our users collection
+
+    // attempt to find this token in our database
+    collection.findOne({
+            'facebook.id': profile.id 
+        }, function(err, user) {
+            if (err) {
+                return done(err);
+            }
+            //No user was found... so create a new user with values from Facebook (all the profile. stuff)
+            if (!user) {
+                user = new User({
+                    name: profile.displayName,
+                    email: profile.emails[0].value,
+                    username: profile.username,
+                    provider: 'facebook',
+                    //now in the future searching on User.findOne({'facebook.id': profile.id } will match because of this next line
+                    facebook: profile._json
+                });
+                user.save(function(err) {
+                    if (err) console.log(err);
+                    return done(err, user);
+                });
+            } else {
+                //found user. Return
+                return done(err, user);
+            }
+        });
   }
 ));
 
