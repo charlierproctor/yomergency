@@ -14,6 +14,7 @@
     "express-session": "^1.9.1",
     "mongodb": "^1.4.19",
     "mongoose": "^3.8.18",
+    "mongoose-timestamp": "^0.3.0",
     "monk": "^0.9.0",
     "morgan": "~1.2.3",
     "passport": "^0.2.1",
