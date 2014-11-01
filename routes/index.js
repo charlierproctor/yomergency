@@ -21,4 +21,18 @@ router.get('/index', function(req, res){
 	}
 });
 
+router.get('/yo', function(req,res){
+	res.send(req.query.message);
+});
+
+router.post('/sendyo', function(req, res){
+	var category = req.body.category;
+	var location = req.body.location;
+	var message = req.body.message;
+
+	yo.yoAll("http://yomergency.herokuapp.com/yo?message=" + message, function(response){
+		console.log(response);
+	})
+})
+
 module.exports = router;

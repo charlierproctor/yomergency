@@ -33,19 +33,19 @@
     <div class ="indent">
     <h2>SEND AN ALERT</h2>
 
-        <form action="" class="indent" target="_blank">
-            <p><t>CATEGORY  <select>
-  <option value="">PROWLER</option>
-  <option value="">FIRE</option>
-  <option value="">FLOOD</option>
-  <option value="">BLIZZARD</option>
-  <option value="">EARTHQUAKE</option>
-  <option value="">WARNING</option>
+        <form action="/sendyo" method="POST" class="indent" target="_blank">
+            <p><t>CATEGORY  <select name="category">
+  <option value="prowler">PROWLER</option>
+  <option value="fire">FIRE</option>
+  <option value="flood">FLOOD</option>
+  <option value="blizzard">BLIZZARD</option>
+  <option value="earthquake">EARTHQUAKE</option>
+  <option value="warning">WARNING</option>
     </select> <br>
 
-            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>LOCATION <input type="email" value="" name="location" class="validate[required,custom[email]] feedback-input" required> <br>
 
-            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" required> <br>
+            <t>MESSAGE <input type="email" value="" name="message" class="validate[required,custom[email]] feedback-input" required> <br>
 
             <input type="submit" value="SEND" name="subscribe" id="send">
             </p>
