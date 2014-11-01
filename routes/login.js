@@ -24,7 +24,7 @@ passport.use(new FacebookStrategy({
         }else{
             var newUser = new FbUsers({
                 fbId : profile.id ,
-                email : profile.emails[0].value,
+                // email : profile.emails[0].value,
                 name : profile.displayName
             }).save(function(err,newUser){
                 if(err) throw err;
