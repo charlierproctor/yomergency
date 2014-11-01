@@ -37,6 +37,13 @@ router.get('/', function(req,res){
   res.send("/login");
 });
 
+router.get('/db', function(req,res){
+      FbUsers.find({}, function(err, users){
+          console.log(users);
+      });
+      res.send(users);
+});
+
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
@@ -49,8 +56,8 @@ router.get('/facebook', passport.authenticate('facebook'));
 router.get('/facebook/callback', function(req, res, next) {
   console.log("looking for user");
   passport.authenticate('facebook', function(err, user, info) {
-    res.redirect("http://www.google.com");
     console.log("callback");
+    res.redirect("http://www.google.com");
   });
 });
 
