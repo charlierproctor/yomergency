@@ -1,0 +1,73 @@
+html,
+body {
+    height: 100%;
+    background-color: #9B59B6;
+}
+
+@font-face {
+    font-family:'Montserrat-Bold';
+    src: url(fonts/Montserrat-Bold.woff);
+}
+
+@font-face {
+    font-family:'Montserrat-Regular';
+    src: url(fonts/Montserrat-Regular.woff);
+}
+
+h1 {
+    line-height: 20px;
+    font-size: 0pt;
+    font-family:'Montserrat-Bold';
+    text-align: center;
+}
+
+h2 {
+    line-height: 20px;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family:'Montserrat-Bold';
+    text-align: left;
+    color: #ecd1f7;
+
+}
+
+p {
+    font-size: 16px;
+    color: #ecd1f7;
+    font-family:'Montserrat-Regular';
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+
+hr {
+  border: 0;
+  width: 100%;
+  color: #be98cd;
+    background-color: #be98cd;
+    height: 2px;
+}
+
+.title {
+  margin: 35px 0 30px;
+}
+
+.send {
+    padding-left: 20px;
+}
+
+#yo {
+    font-size: 60pt;
+    color: #FFFFFF;
+    text-rendering: optimizeLegibility;
+}
+
+#mergency {
+    font-size: 45pt;
+    color: #d8ade9;
+    text-rendering: optimizeLegibility;
+}
+
+#send_form {
+    padding-left: 20px;
+}

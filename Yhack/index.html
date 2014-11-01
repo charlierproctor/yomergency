@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>YOMERGENCY</title>
+    <link href='css/style.css' rel='stylesheet'/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='css/yomergency.css' rel='stylesheet'/>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="css/component.css" rel="stylesheet" type="text/css" />
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    
+    <div class = "container">
+
+     <div class="title">
+      <h1><span id="yo">Yo</span>
+        <span id="mergency">MERGENCY</span></h1>
+    </div><hr>
+
+
+    <div class ="send">
+    <h2>SEND AN ALERT</h2>
+
+        <form action="" class="validate" target="_blank" id="send_form">
+            <p><t>CATEGORY <input type="email" value="" name="send" class="validate[required,custom[email]] feedback-input" placeholder="send alert" required>
+
+            <t>LOCATION <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+
+            <t>MESSAGE <input type="email" value="" name="EMAIL" class="validate[required,custom[email]] feedback-input" id="email_sexy" placeholder="Join the Email List" required>
+
+            <input type="submit" value="SUBSCRIBE" name="subscribe" id="button-yellow" class="submit">
+            </p>
+        </form>
+    </div>
+
+
+
+
+
+<!-- <section>
+<form id="theForm" class="simform" autocomplete="off">
+          <div class="simform-inner">
+            <ol class="questions">
+                <li>
+                <span><label for="q1">CATEGORY</label></span>
+                <input id="q1" name="q1" type="text"/>
+              </li>
+              <li>
+                <span><label for="q2">LOCATION</label></span>
+                <input id="q2" name="q2" type="text"/>
+              </li>
+              <li>
+                <span><label for="q3">MESSAGE</label></span>
+                <input id="q3" name="q3" type="text"/>
+              </li>
+            </ol>
+            <button class="submit" type="submit">Send answers</button>
+            <div class="controls">
+              <button class="next"></button>
+              <div class="progress"></div>
+              <span class="number">
+                <span class="number-current"></span>
+                <span class="number-total"></span>
+              </span>
+              <span class="error-message"></span>
+            </div>
+          </div>
+          <span class="final-message"></span>
+        </form>
+</section> -->
+
+
+  </div>
+
+<script src="js/classie.js"></script>
+    <script src="js/stepsForm.js"></script>
+    <script>
+      var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+          /*
+          form.submit()
+          or
+          AJAX request (maybe show loading indicator while we don't have an answer..)
+          */
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Sent!';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+    </script>
+  </body>
+</html>
