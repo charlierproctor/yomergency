@@ -105,7 +105,9 @@ hr {
     color: #F1C40F;
 }
 
-
+.white {
+    color: #FFFFFF;
+}
 
 .img_responsive {
     display: block;
@@ -137,15 +139,15 @@ img {
 }
 
 #yo_small {
-    font-size: 22pt;
+    font-size: 16pt;
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 
 #mergency_small {
-    font-size: 20pt;
-    color: #d8ade9;
+    font-size: 15pt;
+    color: #FFFFFF;
     font-family:'Montserrat-Bold';
     text-rendering: optimizeLegibility;
 }
@@ -157,10 +159,18 @@ img {
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
-#locat_mess {
+
+#locat {
     font-size: 23pt;
+    font-family:'Montserrat-Bold';
+    color: #FFFFFF;
+    text-rendering: optimizeLegibility;
+}
+
+#mess {
+    font-size: 18pt;
     font-family:'Montserrat-Regular';
-    color: #d8ade9;
+    color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 

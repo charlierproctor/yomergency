@@ -20,6 +20,16 @@
     <style>
     <% if(category.toLowerCase() === "warning") { %>
            body {background-color:#F1C40F}
+    <% } else if(category.toLowerCase() === "prowler") { %>
+          body {background-color:#34495E}
+    <% } else if(category.toLowerCase() === "fire") { %>
+          body {background-color:#e74c3c}
+    <% } else if(category.toLowerCase() === "flood") { %>
+          body {background-color:#3498DB}
+      <% } else if(category.toLowerCase() === "blizzard") { %>
+          body {background-color:#2980B9}
+    <% } else if(category.toLowerCase() === "earthquake") { %>
+          body {background-color:#16A085}
     <% } %>
     </style>
   </head>
@@ -29,17 +39,12 @@
 
 <div class = "message">
 <img src="images/<%= category.toLowerCase() %>.png">
-    <p id ="category"><%= category %></p>
-        <p id ="locat_mess"><%= location %></p>
-    <p id ="locat_mess"><%= message %></p>
-
-
-<div class="title">
-      <p>from <span id="yo_small">Yo</span>
+    <p> <span id ="category"><%= category %></span><br>
+        <span id ="mess">in </span><span id ="locat"><%= location %></span><br><br><br>
+    <span id ="mess"><%= message %></span> <span class="white"><br>from</span> <span id="yo_small">Yo</span>
         <span id="mergency_small">MERGENCY</span></p>
     </div>
 
-    </div>
 
   </div>
 
