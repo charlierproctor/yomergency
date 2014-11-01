@@ -29,12 +29,14 @@ passport.use(new FacebookStrategy({
                     name: profile.displayName,
                     email: profile.emails[0].value,
                     username: profile.username,
+                    accessToken: accessToken,
                     provider: 'facebook',
                     //now in the future searching on User.findOne({'facebook.id': profile.id } will match because of this next line
                     facebook: profile._json
                 });
                 user.save(function(err) {
                     if (err) console.log(err);
+                    console.log("saving user...");
                     return done(err, user);
                 });
             } else {
