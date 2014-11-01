@@ -22,7 +22,7 @@ router.get('/index', function(req, res){
 });
 
 router.get('/yo', function(req,res){
-	res.render('message', {message:req.query.m})
+	res.render('message', {category:req.query.c, location:req.query.l, message:req.query.m})
 });
 
 router.post('/sendyo', function(req, res){
@@ -30,7 +30,7 @@ router.post('/sendyo', function(req, res){
 	var location = req.body.location;
 	var message = req.body.message;
 
-	yo.yoAll("http://yomergency.herokuapp.com/yo?m=" + message, function(response){
+	yo.yoAll("http://yomergency.herokuapp.com/yo?c=" + category + "&l=" + location + "&m=" + message, function(response){
 		res.send("Yo sent successfully.")
 	})
 })
