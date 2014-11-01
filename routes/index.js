@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 	res.redirect('/login');
 });
 
-app.get('/index', function(req, res, next) {
+router.get('/index', function(req, res, next) {
   passport.authenticate('facebook', function(err, user, info) {
     if (err) { return next(err); }
     if (!user) { return res.redirect('/login'); }
