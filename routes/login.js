@@ -16,10 +16,8 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://yomergency.herokuapp.com/login/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log("you called me");
       FbUsers.findOne({fbId : profile.id}, function(err, oldUser){
         if(oldUser){
-          console.log("old user");
             done(null,oldUser);
         }else{
             var newUser = new FbUsers({
@@ -28,11 +26,9 @@ passport.use(new FacebookStrategy({
                 name : profile.displayName
             }).save(function(err,newUser){
                 if(err) throw err;
-                console.log("saved new user");
                 done(null, newUser);
             });
         }
-        console.log("hi");
       });
   }
 ));
@@ -47,14 +43,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-router.get('/', function(req,res){
-  res.send("/login");
-});
-
 router.get('/db', function(req,res){
-      FbUsers.find({}, function(err, users){
-        res.send(users);
-      });
+  FbUsers.find({}, function(err, users){
+    res.send(users);
+  });
 });
 
 // Redirect the user to Facebook for authentication.  When complete,
