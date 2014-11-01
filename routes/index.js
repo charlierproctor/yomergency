@@ -10,14 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index', function(req, res, next) {
-  passport.authenticate('facebook', function(err, user, info) {
-    if (err) { return next(err); }
-    if (!user) { return res.redirect('/login'); }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      return res.render('/index')
-    });
-  })(req, res, next);
+  //need to authenticate here.
+  res.render('index');
 });
 
 module.exports = router;
