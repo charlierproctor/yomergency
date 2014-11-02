@@ -76,7 +76,8 @@
       <p class = "indent">
         <% for(var i = yos.length - 1; i >= 0; i--) { %>
         <% var yo = yos[i] %>
-          <t><span class="<%= yo.category %>">■  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= yo.createdAt.toLocaleString() %>: <%= yo.message %><br>
+        <% var date = new Date(yo.createdAt.UTC() + (3600000*(-5))) %>
+          <t><span class="<%= yo.category %>">■  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= date.toString() %>: <%= yo.message %><br>
         <% } %> 
       </p>
 
