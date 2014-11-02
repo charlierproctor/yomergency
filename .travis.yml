@@ -1,4 +1,4 @@
 deploy:
   provider: heroku
-  api_key: 15e156d8-49a0-4e2c-9b93-4e55290f54ad
+  api_key: "15e156d8-49a0-4e2c-9b93-4e55290f54ad"
   app: yomergency
