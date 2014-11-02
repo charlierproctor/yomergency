@@ -1,7 +1,10 @@
- language: node_js
- node_js:
-   - "0.10"
+language: node_js
+node_js:
+- '0.10'
 deploy:
   provider: heroku
-  api_key: "15e156d8-49a0-4e2c-9b93-4e55290f54ad"
+  api_key:
+    secure: NPpbcrvYTt1bqY7w0W4A7tULbAHeusCmtbmqWuvIzr0cfSJAu2bO0CZzabfAgpoOftTFdH1RDeX47zdw5O7ITJhaq0MadrlOUwSllG13jcHBsJgJ3ss1yFcxPTn+pqkSC3VPbMJVP9U65PKuyriwTg2n45mb42xUhZyNPsX7lCs=
   app: yomergency
+  on:
+    repo: charlierproctor/yomergency
