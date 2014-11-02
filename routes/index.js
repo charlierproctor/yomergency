@@ -64,7 +64,7 @@ router.post('/index', function(req, res){
 		var query = querystring.stringify({category: category, 
 			location: location, message: message})
 		yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
-			res.send("Yo sent successfully.")
+			console.log("Yo sent successfully.")
 		})	
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
 		console.log("YOS: " + yos);
