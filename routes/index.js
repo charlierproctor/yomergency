@@ -30,7 +30,7 @@ router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
 			console.log("YOS: " + yos);
-			res.render('index', { user:req.user, yos:yos, flash:"" })		        
+			res.render('index', { user:req.user, yos:yos, flash:"", moment:moment })		        
 	    });
 	} else{
 		res.redirect('/login');		
@@ -68,7 +68,7 @@ router.post('/index', function(req, res){
 		})	
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
 		console.log("YOS: " + yos);
-		res.render('index', { user:req.user, yos:yos, flash:"Yo sent successfully!" })		        
+		res.render('index', { user:req.user, yos:yos, flash:"Yo sent successfully!", moment:moment })		        
     });
 	} else{
 		res.redirect('/login');		
