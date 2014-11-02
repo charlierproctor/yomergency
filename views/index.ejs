@@ -38,8 +38,8 @@
 
     <div class ="indent">
     <h2>HI THERE, <%= user.name.toUpperCase() %></h2><br>
-    <% if (typeof flash !== 'undefined' && flash) { %>
-      <h2>Yo sent successfully!</h2>
+    <% if(flash) { %>
+      <h2><%= flash %></h2>
     <% } %>
     <h2>SEND AN ALERT</h2>
 
