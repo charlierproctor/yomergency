@@ -38,6 +38,9 @@
 
     <div class ="indent">
     <h2>HI THERE, <%= user.name.toUpperCase() %></h2><br>
+    <% if(flash){ %>
+      <h2>Yo sent successfully!</h2>
+    <% } %>
     <h2>SEND AN ALERT</h2>
 
         <form action="/index" method="POST" class="indent">
