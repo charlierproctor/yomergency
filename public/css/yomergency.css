@@ -79,7 +79,18 @@ hr {
     margin-bottom: 40px;
 }
 
+.input-group {
+    font-family:'Montserrat-Regular';
+    color: #ecd1f7;
+}
 
+.fields {
+    background-color: #a360bf;
+    border-color: #a360bf;
+    color: #FFFFFF;
+    margin-left: 15px;
+    
+}
 
 .prowler {
     color: #34495E;
@@ -212,6 +223,40 @@ img {
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
+
+#logout {
+    margin-top: 10px;
+    margin-right: 20px;
+    font-family:'Montserrat-Regular';
+    background-color: #904cab;
+    border-color: #a360bf;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#logout:hover {
+    border-color: #dec5e8;
+}
+
+#send {
+    margin-left:10px;
+    width: 80pt;
+    font-family:'Montserrat-Bold';
+    color: #9B59B6;
+    background-color: #dec5e8;
+    border-color: #a360bf;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#send:hover {
+    margin-left:7px;
+    width: 86pt;
+}
+
+
 
 #send_form { 
     padding-left: 20px;
