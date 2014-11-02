@@ -1,7 +1,6 @@
 html,
 body {
     height: 100%;
-    background-color: #9B59B6;
 }
 
 @font-face {
@@ -58,7 +57,7 @@ hr {
 }
 
 .message {
-    padding: 40px 0 25px;
+    padding: 40px 0 0px;
     text-align: center;
 }
 
@@ -115,11 +114,16 @@ hr {
     max-width: 75%;
 }
 
+
+.no_font {
+    font-size: 0px;
+}
+
 img {
     vertical-align: middle;
     border: 0;
     page-break-inside: avoid;
-    max-width: 75%;
+    max-width: 60%;
 }
 
 
@@ -143,10 +147,12 @@ img {
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
+    text-transform: none;
 }
 
 #mergency_small {
-    font-size: 15pt;
+    opacity: .85;
+    font-size: 12pt;
     color: #FFFFFF;
     font-family:'Montserrat-Bold';
     text-rendering: optimizeLegibility;
@@ -154,27 +160,34 @@ img {
 
 #category {
     padding-top: 20px;
-    font-size: 35pt;
+    font-size: 30pt;
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     text-rendering: optimizeLegibility;
 }
 
 #locat {
-    font-size: 23pt;
+    line-height: 50%;
+    font-size: 18pt;
     font-family:'Montserrat-Bold';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 
 #mess {
-    font-size: 18pt;
+    line-height: 50%;
+    font-size: 16pt;
     font-family:'Montserrat-Regular';
     color: #FFFFFF;
     text-rendering: optimizeLegibility;
 }
 
-#send_form {
+#send_form { 
     padding-left: 20px;
 }
 
+#iphone {
+    width: 320px;
+}
