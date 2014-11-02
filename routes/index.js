@@ -21,6 +21,11 @@ router.get('/', function(req, res) {
 	}
 });
 
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
