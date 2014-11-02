@@ -45,8 +45,8 @@
 
         <form action="/index" method="POST" class="indent">
         <div class="input-group">
-        <label>CATEGORY</label>
-              <select name="category" class="form-control">
+        <label for="categoryDropdown">CATEGORY</label>
+              <select name="category" id="categoryDropdown" class="form-control">
   <option value="prowler">PROWLER</option>
   <option value="fire">FIRE</option>
   <option value="flood">FLOOD</option>
@@ -56,13 +56,14 @@
     </select> </div>
 
         <div class="input-group">
-                <label>LOCATION</label>
-             <input type="text" value="" name="location" class="validate[required,custom[email]] feedback-input form-control"> <br>
+                <label for="locationField">LOCATION</label>
+             <input type="text" value="" id="locationField" name="location" class="validate[required,custom[email]] feedback-input form-control"> <br>
         </div>
         <div class="input-group">
-            <label>MESSAGE</label>
-             <input type="text" value="" name="message" class="validate[required,custom[email]] feedback-input form-control"> <br>
+            <label for="messageField">MESSAGE</label>
+             <input type="text" value="" id="messageField" name="message" class="validate[required,custom[email]] feedback-input form-control"> <br>
         </div>
+        <br>
             <button type="submit" class="btn btn-default" name="subscribe" id="send">SEND</button>
             </p>
         </form>
