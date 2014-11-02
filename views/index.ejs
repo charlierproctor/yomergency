@@ -76,7 +76,7 @@
       <p class = "indent">
         <% for(var i = yos.length - 1; i >= 0; i--) { %>
         <% var yo = yos[i] %>
-          <t><span class="<%= yo.category %>">■  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= moment(yo.createdAt).fromNow() %>: <%= yo.message %><br>
+          <t><span class="<%= yo.category %>">■  </span><%= moment(yo.createdAt).fromNow() %>: <%= yo.category.toUpperCase() %> IN <%= yo.location %>: <%= yo.message %><br>
         <% } %> 
       </p>
 
