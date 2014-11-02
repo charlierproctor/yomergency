@@ -51,6 +51,6 @@ Yomergency was built at [YHack 2014](http://yhack.org) by:
 
 | Name | GitHub |
 |------|--------|
-| John Chirikjian | [jchirik](https://github.com/ |jchirik) |
+| John Chirikjian | [jchirik](https://github.com/jchirik) |
 | Anthony Kim | [ak3703](https://github.com/ak3703)
 | Charlie Proctor | [charlierproctor](https://github.com/charlierproctor)
