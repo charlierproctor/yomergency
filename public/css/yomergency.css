@@ -20,7 +20,7 @@ h1 {
     text-align: center;
 }
 
-h2 {
+h2, label {
     line-height: 20px;
     font-size: 14pt;
     text-transform: uppercase;
