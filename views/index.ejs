@@ -11,11 +11,8 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='css/yomergency.css' rel='stylesheet'/>
-    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="css/component.css" rel="stylesheet" type="text/css" />
     <script src="js/modernizr.custom.js"></script>
     <style>
       body {background-color: #9B59B6}
@@ -32,25 +29,40 @@
 
     <hr>
 
+    <div style="float:right">
+      <a href="/logout"><button class="btn btn-default">Logout</button></a>
+    </div>
 
     <div class ="indent">
+    <h2>HI THERE, <%= user.name.toUpperCase() %></h2><br>
+    <% if(flash) { %>
+      <h2><%= flash %></h2>
+    <% } %>
     <h2>SEND AN ALERT</h2>
 
-        <form action="/sendyo" method="POST" class="indent">
-            <p><t>CATEGORY  <select name="category">
+        <form action="/index" method="POST" class="indent">
+        <div class="input-group">
+        <label for="categoryDropdown">CATEGORY</label>
+              <select name="category" id="categoryDropdown" class="form-control">
   <option value="prowler">PROWLER</option>
   <option value="fire">FIRE</option>
   <option value="flood">FLOOD</option>
   <option value="blizzard">BLIZZARD</option>
   <option value="earthquake">EARTHQUAKE</option>
   <option value="warning">WARNING</option>
-    </select> <br>
-
-            <t>LOCATION <input type="text" value="" name="location" class="validate[required,custom[email]] feedback-input"> <br>
-
-            <t>MESSAGE <input type="text" value="" name="message" class="validate[required,custom[email]] feedback-input"> <br>
-
-            <input type="submit" value="SEND" name="subscribe" id="send">
+    </select> </div>
+        <br>
+        <div class="input-group">
+                <label for="locationField">LOCATION</label>
+             <input type="text" value="" placeholder="Location" id="locationField" name="location" class="validate[required,custom[email]] feedback-input form-control"> <br>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="messageField">MESSAGE</label>
+             <input type="text" value="" placeholder="Message" id="messageField" name="message" class="validate[required,custom[email]] feedback-input form-control"> <br>
+        </div>
+        <br>
+            <button type="submit" class="btn btn-default" name="subscribe" id="send">SEND</button>
             </p>
         </form>
     </div>
@@ -62,9 +74,9 @@
     <div class = "alert_box">
 
       <p class = "indent">
-        <% for(var i = 0; i < yos.length; i++) { %>
+        <% for(var i = yos.length - 1; i >= 0; i--) { %>
         <% var yo = yos[i] %>
-          <t><span class="<%= yo.category %>">■  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= yo.createdAt.toUTCString() %>: <%= yo.message %><br>
+          <t><span class="<%= yo.category %>">■  </span><%= yo.category.toUpperCase() %> IN <%= yo.location %> AT <%= yo.createdAt.toLocaleString() %>: <%= yo.message %><br>
         <% } %> 
       </p>
 

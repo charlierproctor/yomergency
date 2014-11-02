@@ -21,11 +21,16 @@ router.get('/', function(req, res) {
 	}
 });
 
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 router.get('/index', function(req, res){
 	if(req.isAuthenticated()){
 		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
 			console.log("YOS: " + yos);
-			res.render('index', { user:req.user, yos:yos })		        
+			res.render('index', { user:req.user, yos:yos, flash:"" })		        
 	    });
 	} else{
 		res.redirect('/login');		
@@ -39,27 +44,35 @@ router.get('/yo', function(req,res){
 		message:query.message})
 });
 
-router.post('/sendyo', function(req, res){
-	var category = req.body.category;
-	var location = req.body.location;
-	var message = req.body.message;
+router.post('/index', function(req, res){
+	if(req.isAuthenticated()){
+		var category = req.body.category;
+		var location = req.body.location;
+		var message = req.body.message;
 
-	console.log("user: " + req.user);
-	var newYo = new Yos({
-                authorsFbId : req.user.fbId,
-                message : message,
-                category : category,
-                location : location
-            }).save(function(err,newYo){
-                if(err) throw err;
-                console.log("Saved: " + newYo);
-            });
+		console.log("user: " + req.user);
+		var newYo = new Yos({
+	                authorsFbId : req.user.fbId,
+	                message : message,
+	                category : category,
+	                location : location
+	            }).save(function(err,newYo){
+	                if(err) throw err;
+	                console.log("Saved: " + newYo);
+	            });
 
-	var query = querystring.stringify({category: category, 
-		location: location, message: message})
-	yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
-		res.send("Yo sent successfully.")
-	})		
+		var query = querystring.stringify({category: category, 
+			location: location, message: message})
+		yo.yoAll("http://yomergency.herokuapp.com/yo?" + query, function(response){
+			console.log("Yo sent successfully.")
+		})	
+		Yos.find({authorsFbId : req.user.fbId}, function(err, yos){
+		console.log("YOS: " + yos);
+		res.render('index', { user:req.user, yos:yos, flash:"Yo sent successfully!" })		        
+    });
+	} else{
+		res.redirect('/login');		
+	}	
 })
 
 module.exports = router;

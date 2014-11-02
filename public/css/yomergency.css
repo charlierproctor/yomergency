@@ -68,6 +68,7 @@ hr {
 
 .indent {
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .alert_box {
@@ -113,6 +114,34 @@ hr {
     height: auto;
     max-width: 75%;
 }
+
+.ico_login {
+
+    display:inline-block;
+    position:relative;
+    width:28px;
+    height:28px;
+    margin:0 auto;
+}
+
+#ico_login img {
+    width:28px;
+    height:28px;
+    position:relative;
+    
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#ico_login img.top {
+    right:31.8px;
+}
+#ico_login img.top:hover {
+    opacity:0;
+}
+
 
 
 .no_font {
@@ -191,3 +220,20 @@ img {
 #iphone {
     width: 320px;
 }
+
+#login {
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family:'Montserrat-Bold';
+    color: #ecd1f7;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#login:hover { 
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
